@@ -9,7 +9,7 @@ RUN npm --prefix frontend run build
 
 FROM ghcr.io/astral-sh/uv:0.8.17 AS uv
 
-FROM python:3.12-slim-bookworm AS builder
+FROM python:3.14-slim-bookworm AS builder
 WORKDIR /build
 COPY --from=uv /uv /usr/local/bin/uv
 COPY pyproject.toml uv.lock README.md LICENSE ./
@@ -22,7 +22,7 @@ RUN uv build --wheel --out-dir /dist \
     && uv pip sync --python /opt/context-loom/bin/python /tmp/runtime-requirements.txt \
     && uv pip install --python /opt/context-loom/bin/python --no-deps /dist/context_loom-*.whl
 
-FROM python:3.12-slim-bookworm AS runtime
+FROM python:3.14-slim-bookworm AS runtime
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PATH=/opt/context-loom/bin:$PATH \
