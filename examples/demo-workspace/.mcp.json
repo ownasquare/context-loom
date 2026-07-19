@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "demo-catalog": {
+      "description": "Static demo metadata; Context Loom never starts this server.",
+      "command": "demo-mcp-server",
+      "type": "stdio"
+    }
+  }
+}

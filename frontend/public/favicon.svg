@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Context Loom">
+  <rect width="64" height="64" rx="16" fill="#9ce9bd"/>
+  <path d="M16 19h20c8 0 12 4 12 10s-4 10-12 10H25c-4 0-6 2-6 5s2 5 6 5h23" fill="none" stroke="#07170f" stroke-width="7" stroke-linecap="round"/>
+  <path d="M16 31h17" fill="none" stroke="#07170f" stroke-width="7" stroke-linecap="round"/>
+</svg>

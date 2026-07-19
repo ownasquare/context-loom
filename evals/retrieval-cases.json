@@ -1,0 +1,31 @@
+{
+  "schema_version": "retrieval-cases-v1",
+  "targets": {
+    "explicit_reference_recall": 1.0,
+    "protected_atom_coverage": 1.0,
+    "citation_coverage": 1.0,
+    "deterministic_replay_rate": 1.0,
+    "recall_at_10": 0.95,
+    "median_projected_input_reduction_percent": 30.0
+  },
+  "cases": [
+    {
+      "id": "direct-python-path",
+      "message": "Review src/retry.py without changing MAX_RETRIES = 3.",
+      "expected_paths": ["src/retry.py"],
+      "protected_atoms": ["src/retry.py", "MAX_RETRIES", "3", "without changing MAX_RETRIES = 3"]
+    },
+    {
+      "id": "exact-symbol",
+      "message": "Explain should_retry and do not retry HTTP 401 or 403 responses.",
+      "expected_symbols": ["should_retry"],
+      "protected_atoms": ["should_retry", "do not retry HTTP 401 or 403 responses", "401", "403"]
+    },
+    {
+      "id": "workspace-instructions",
+      "message": "Which instructions are in AGENTS.md?",
+      "expected_paths": ["AGENTS.md"],
+      "protected_atoms": ["AGENTS.md"]
+    }
+  ]
+}

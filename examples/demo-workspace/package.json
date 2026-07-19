@@ -1,0 +1,8 @@
+{
+  "name": "context-loom-demo-workspace",
+  "private": true,
+  "scripts": {
+    "check": "pytest",
+    "format": "ruff format"
+  }
+}

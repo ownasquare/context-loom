@@ -1,0 +1,30 @@
+services:
+  context-loom:
+    build:
+      context: .
+    image: context-loom:local
+    read_only: true
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8768:8768"
+    environment:
+      CONTEXT_LOOM_HOME: /data
+      CONTEXT_LOOM_HOST: 0.0.0.0
+      CONTEXT_LOOM_ALLOW_NON_LOOPBACK: "true"
+      CONTEXT_LOOM_ALLOW_OUTBOUND: "false"
+    volumes:
+      - context-loom-data:/data
+      - type: bind
+        source: ${CONTEXT_LOOM_PROJECT:-./examples/demo-workspace}
+        target: /workspace
+        read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  context-loom-data:

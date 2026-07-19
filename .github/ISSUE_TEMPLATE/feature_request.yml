@@ -1,0 +1,53 @@
+name: Feature request
+description: Propose a focused user outcome that preserves Context Loom's fidelity and privacy contracts.
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is difficult today, and for whom?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the user-visible result rather than a preferred implementation.
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Primary surface
+      options:
+        - Workbench
+        - CLI
+        - Local API
+        - MCP or harness integration
+        - Adapter extension API
+        - Indexing or retrieval
+        - Token accounting
+        - Packaging or operations
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Fidelity, privacy, and compatibility considerations
+      description: Explain effects on exact-message preservation, citations, outbound access, retention, or public contracts.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Include current workarounds when applicable.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: This request contains no private project content, chat messages, credentials, or identifying paths.
+          required: true

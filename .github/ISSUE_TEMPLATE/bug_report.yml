@@ -1,0 +1,84 @@
+name: Bug report
+description: Report reproducible Context Loom behavior using sanitized evidence.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve Context Loom. Never include project source, chat messages,
+        databases, credentials, private provider responses, or identifying absolute paths.
+  - type: input
+    id: version
+    attributes:
+      label: Context Loom version
+      description: Run `context-loom version`.
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: Installation method
+      options:
+        - GitHub source with uv tool
+        - Development checkout with uv sync
+        - Built wheel or sdist
+        - Docker Compose
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, Python version, and browser or harness when relevant.
+      placeholder: Linux, Python 3.12, Chromium
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction
+      description: Give the smallest sanitized steps and say whether a demo or public fixture reproduces it.
+      placeholder: |
+        1. Run ...
+        2. Open ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Sanitized actual behavior
+      description: Include stable error codes, not private content or raw databases.
+    validations:
+      required: true
+  - type: dropdown
+    id: proof
+    attributes:
+      label: Proof boundary
+      options:
+        - Local CLI
+        - Local browser
+        - Container
+        - Live Ollama
+        - Provider
+        - Real harness
+        - Hosted or production
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed credentials, project content, chat messages, database files, and identifying paths.
+          required: true
+        - label: This is not a vulnerability report; security reports require a private advisory.
+          required: true
