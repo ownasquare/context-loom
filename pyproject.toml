@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.27,<2"]
+requires = ["hatchling>=1.31.0,<2"]
 build-backend = "hatchling.build"
 
 [project]
@@ -21,20 +21,20 @@ classifiers = [
   "Typing :: Typed",
 ]
 dependencies = [
-  "fastapi>=0.139,<0.140",
-  "filelock>=3.19,<4",
+  "fastapi>=0.141.1,<0.142",
+  "filelock>=3.32.2,<4",
   "httpx>=0.28,<1",
-  "mcp>=1.27,<2",
-  "pathspec>=0.12,<1",
-  "platformdirs>=4.4,<5",
+  "mcp>=2.0.0,<3",
+  "pathspec>=1.1.1,<2",
+  "platformdirs>=4.11.0,<5",
   "pyarrow>=21,<26",
   "pydantic==2.13.4",
   "pydantic-settings==2.14.2",
   "python-multipart>=0.0.20,<1",
-  "rich>=14,<15",
+  "rich>=15.0.0,<16",
   "tiktoken>=0.12,<1",
-  "typer>=0.21,<1",
-  "uvicorn[standard]>=0.51,<0.52",
+  "typer>=0.27.1,<1",
+  "uvicorn[standard]>=0.52.1,<0.53",
 ]
 
 [project.urls]
@@ -51,14 +51,14 @@ context-loom = "context_loom.cli:app"
 dev = [
   "bandit>=1.8,<2",
   "build>=1.4,<2",
-  "mypy>=1.19,<2",
+  "mypy>=2.3.0,<3",
   "pip-audit>=2.9,<3",
   "pytest==9.1.1",
   "pytest-asyncio>=1.3,<2",
   "pytest-cov>=7,<8",
   "pytest-playwright>=0.7,<1",
   "pytest-socket>=0.7,<1",
-  "ruff>=0.15,<1",
+  "ruff>=0.16.1,<1",
 ]
 
 [tool.hatch.build.targets.wheel]
