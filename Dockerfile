@@ -7,7 +7,7 @@ COPY frontend ./frontend
 COPY src ./src
 RUN npm --prefix frontend run build
 
-FROM ghcr.io/astral-sh/uv:0.8.17 AS uv
+FROM ghcr.io/astral-sh/uv:0.12.19 AS uv
 
 FROM python:3.12-slim-bookworm AS builder
 WORKDIR /build
